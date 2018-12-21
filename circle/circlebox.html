@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			background-color: #000;
+			margin: 0;
+			font-family: Helvetica, sans-serif;;
+			overflow: hidden;
+		}
+
+		a {
+			color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+	<div id="canvas-example"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../threeJs/three.js-dev/build/three.min.js"></script>
+	<script src="../threeJs/three.js-dev/examples/js/renderers/CSS3DRenderer.js"></script>
+	<script src="../threeJs/three.js-dev/examples/js/libs/tween.min.js"></script>
+	<script src="../threeJs/three.js-dev/examples/js/controls/TrackballControls.js"></script>
+	<script>
+		var camera, scene, renderer, group;
+		init();
+		function init(){
+			camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+			camera.position.z = 3000;
+			scene = new THREE.Scene();
+			group = new THREE.Group();
+			group1 = new THREE.Group();
+			group2 = new THREE.Group();
+			group3 = new THREE.Group();
+			group4 = new THREE.Group();
+			group5 = new THREE.Group();
+			group6 = new THREE.Group();
+			scene.add(group);
+			scene.add(group1);
+			scene.add(group2);
+			scene.add(group3);
+			scene.add(group4);
+			scene.add(group5);
+			scene.add(group6);
+			var cube;
+			var backload = new THREE.TextureLoader();
+				backload.load('./240450-140HZP45790.jpg', function(texture){
+					var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+					var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide} );
+					material.transparent = true;
+					cube = new THREE.Mesh( geometry, material );
+
+					add();
+				}, 'undefined', function(err){
+					console.log(err)
+				})
+
+			function add(){
+				for(var i = 0; i < 30;i++){
+					var l = 30;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*1200;
+					dom.position.z = Math.cos((ahd*i))*1200;
+					dom.lookAt( group.position )
+					group.add(dom)
+				}
+				for(var i = 0; i < 20;i++){
+					var l = 20;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*1000;
+					dom.position.y = 300;
+					dom.position.z = Math.cos((ahd*i))*1000;
+					dom.lookAt( group1.position )
+					group1.add(dom)
+				}
+				for(var i = 0; i < 20;i++){
+					var l = 20;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*1000;
+					dom.position.y = -300;
+					dom.position.z = Math.cos((ahd*i))*1000;
+					dom.lookAt( group2.position )
+					group2.add(dom)
+				}
+				for(var i = 0; i < 14;i++){
+					var l = 14;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*800;
+					dom.position.y = 600;
+					dom.position.z = Math.cos((ahd*i))*800;
+					dom.lookAt( group3.position )
+					group3.add(dom)
+				}
+				for(var i = 0; i < 14;i++){
+					var l = 14;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*800;
+					dom.position.y = -600;
+					dom.position.z = Math.cos((ahd*i))*800;
+					dom.lookAt( group4.position )
+					group4.add(dom)
+				}
+				for(var i = 0; i < 10;i++){
+					var l = 10;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*500;
+					dom.position.y = 900;
+					dom.position.z = Math.cos((ahd*i))*500;
+					dom.lookAt( group5.position )
+					group5.add(dom)
+				}
+				for(var i = 0; i < 10;i++){
+					var l = 10;
+					var avd = 360/l;
+					var ahd = avd*Math.PI/180; 
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+					var dom = cube.clone();
+					dom.position.x = Math.sin((ahd*i))*500;
+					dom.position.y = -900;
+					dom.position.z = Math.cos((ahd*i))*500;
+					dom.lookAt( group6.position )
+					group6.add(dom)
+				}
+			}
+
+			renderer = new THREE.WebGLRenderer({})
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.setPixelRatio( window.devicePixelRatio );
+			document.getElementById('canvas-example').appendChild(renderer.domElement);
+			renderer.setClearColor(0x000000, 1);
+		}
+
+		animate();
+		function animate() {
+			group.rotation.y += 0.01;
+			group1.rotation.y -= 0.01;
+			group2.rotation.y -= 0.01;
+			group3.rotation.y += 0.01;
+			group4.rotation.y -= 0.01;
+			group5.rotation.y -= 0.01;
+			group6.rotation.y += 0.01;
+			renderer.render( scene, camera );
+			requestAnimationFrame( animate );
+		}
+
+	</script>
+</body>
+</html>
