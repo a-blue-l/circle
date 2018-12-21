@@ -21,6 +21,8 @@
 	</style>
 </head>
 <body>
+	<button class="qiehuan">切换</button>
+	<button class="sudu">速度</button>
 	<div id="canvas-example"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="../threeJs/three.js-dev/build/three.min.js"></script>
@@ -28,6 +30,7 @@
 	<script src="../threeJs/three.js-dev/examples/js/libs/tween.min.js"></script>
 	<script src="../threeJs/three.js-dev/examples/js/controls/TrackballControls.js"></script>
 	<script>
+		var falg = 1;
 		var camera, scene, renderer, group;
 		init();
 		function init(){
@@ -160,20 +163,47 @@
 			document.getElementById('canvas-example').appendChild(renderer.domElement);
 			renderer.setClearColor(0x000000, 1);
 		}
-
+		var su = 0.01;
 		animate();
 		function animate() {
-			group.rotation.y += 0.01;
-			group1.rotation.y -= 0.01;
-			group2.rotation.y -= 0.01;
-			group3.rotation.y += 0.01;
-			group4.rotation.y -= 0.01;
-			group5.rotation.y -= 0.01;
-			group6.rotation.y += 0.01;
+			if(falg == 1){
+				group.rotation.y += su;
+				group1.rotation.y -= su;
+				group2.rotation.y -= su;
+				group3.rotation.y += su;
+				group4.rotation.y -= su;
+				group5.rotation.y -= su;
+				group6.rotation.y += su;
+			} else if(falg == 2) {
+				group.rotation.y += su;
+				group1.rotation.y += su;
+				group2.rotation.y += su;
+				group3.rotation.y += su;
+				group4.rotation.y += su;
+				group5.rotation.y += su;
+				group6.rotation.y += su;
+			} else {
+				group.rotation.y += su*2;
+				group1.rotation.y -= su;
+				group2.rotation.y -= su;
+				group3.rotation.y += su*3;
+				group4.rotation.y -= su;
+				group5.rotation.y -= su;
+				group6.rotation.y += su*4;
+			}
+			
 			renderer.render( scene, camera );
 			requestAnimationFrame( animate );
 		}
 
+		var arr = [1, 2, 3];
+
+		$('.qiehuan').click(function(){
+			falg = arr[Marg.floor(Math.random()*arr.length)];
+		})
+		$('.sudu').click(function(){
+			su = Math.random()*0.1;
+		})
 	</script>
 </body>
 </html>
