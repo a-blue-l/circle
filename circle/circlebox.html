@@ -55,7 +55,7 @@
 			var backload = new THREE.TextureLoader();
 				backload.load('./240450-140HZP45790.jpg', function(texture){
 					var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
-					var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide} );
+					var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.FrontSide} );
 					material.transparent = true;
 					cube = new THREE.Mesh( geometry, material );
 
