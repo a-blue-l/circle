@@ -54,6 +54,7 @@
 			scene.add(group4);
 			scene.add(group5);
 			scene.add(group6);
+<<<<<<< HEAD
 			// var cube;
 			// var backload = new THREE.TextureLoader();
 			// 	backload.load('./240450-140HZP45790.jpg', function(texture){
@@ -66,6 +67,21 @@
 			// 		console.log(err)
 			// 	})
 			add();
+=======
+			var cube;
+			var backload = new THREE.TextureLoader();
+				backload.load('./240450-140HZP45790.jpg', function(texture){
+					var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+					var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+					material.transparent = true;
+					cube = new THREE.Mesh( geometry, material );
+
+					add();
+				}, 'undefined', function(err){
+					console.log(err)
+				})
+
+>>>>>>> b70c9c754710d55ef65569dbc97e7157cdcf5324
 			function add(){
 				for(var i = 0; i < 50;i++){
 					(function(i){
