@@ -83,8 +83,8 @@
 								var phi = Math.acos( -1 + ( 2 * i ) / l );
 								var theta = Math.sqrt( l * Math.PI ) * phi;
 								var dom = cube.clone();
-								dom.position.x = Math.sin((ahd*i))*1100;
-								dom.position.z = Math.cos((ahd*i))*1100;
+								dom.position.x = Math.sin((ahd*i))*1080;
+								dom.position.z = Math.cos((ahd*i))*1080;
 								dom.lookAt( group.position )
 								group.add(dom)
 								// add();
@@ -104,6 +104,60 @@
 								material.transparent = true;
 								cube = new THREE.Mesh( geometry, material );
 								var l = 40;
+								var avd = 360/l;
+								var ahd = avd*Math.PI/180; 
+								var phi = Math.acos( -1 + ( 2 * i ) / l );
+								var theta = Math.sqrt( l * Math.PI ) * phi;
+								var dom = cube.clone();
+								dom.position.x = Math.sin((ahd*i))*1050;
+								dom.position.y = 150;
+								dom.position.z = Math.cos((ahd*i))*1050;
+								dom.lookAt( group1.position )
+								group1.add(dom)
+								// add();
+							}, 'undefined', function(err){
+								console.log(err)
+							})
+					})(i)
+				}
+				for(var i = 0; i < 45;i++){
+					(function(i){
+						var cube;
+						var math = Math.floor(Math.random()*20);
+						var backload = new THREE.TextureLoader();
+							backload.load('images/'+imgarr[math]+'.jpg', function(texture){
+								var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+								var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+								material.transparent = true;
+								cube = new THREE.Mesh( geometry, material );
+								var l = 45;
+								var avd = 360/l;
+								var ahd = avd*Math.PI/180; 
+								var phi = Math.acos( -1 + ( 2 * i ) / l );
+								var theta = Math.sqrt( l * Math.PI ) * phi;
+								var dom = cube.clone();
+								dom.position.x = Math.sin((ahd*i))*1050;
+								dom.position.y = -150;
+								dom.position.z = Math.cos((ahd*i))*1050;
+								dom.lookAt( group2.position )
+								group2.add(dom)
+								// add();
+							}, 'undefined', function(err){
+								console.log(err)
+							})
+						})(i)
+				}
+				for(var i = 0; i < 45;i++){
+					(function(i){
+						var cube;
+						var math = Math.floor(Math.random()*20);
+						var backload = new THREE.TextureLoader();
+							backload.load('images/'+imgarr[math]+'.jpg', function(texture){
+								var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+								var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+								material.transparent = true;
+								cube = new THREE.Mesh( geometry, material );
+								var l = 45;
 								var avd = 360/l;
 								var ahd = avd*Math.PI/180; 
 								var phi = Math.acos( -1 + ( 2 * i ) / l );
@@ -158,6 +212,60 @@
 								material.transparent = true;
 								cube = new THREE.Mesh( geometry, material );
 								var l = 30;
+								var avd = 360/l;
+								var ahd = avd*Math.PI/180; 
+								var phi = Math.acos( -1 + ( 2 * i ) / l );
+								var theta = Math.sqrt( l * Math.PI ) * phi;
+								var dom = cube.clone();
+								dom.position.x = Math.sin((ahd*i))*900;
+								dom.position.y = 450;
+								dom.position.z = Math.cos((ahd*i))*900;
+								dom.lookAt( group3.position )
+								group3.add(dom)
+								// add();
+							}, 'undefined', function(err){
+								console.log(err)
+							})
+					})(i)
+				}
+				for(var i = 0; i < 35;i++){
+					(function(i){
+						var cube;
+						var math = Math.floor(Math.random()*20);
+						var backload = new THREE.TextureLoader();
+							backload.load('images/'+imgarr[math]+'.jpg', function(texture){
+								var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+								var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+								material.transparent = true;
+								cube = new THREE.Mesh( geometry, material );
+								var l = 35;
+								var avd = 360/l;
+								var ahd = avd*Math.PI/180; 
+								var phi = Math.acos( -1 + ( 2 * i ) / l );
+								var theta = Math.sqrt( l * Math.PI ) * phi;
+								var dom = cube.clone();
+								dom.position.x = Math.sin((ahd*i))*900;
+								dom.position.y = -450;
+								dom.position.z = Math.cos((ahd*i))*900;
+								dom.lookAt( group4.position )
+								group4.add(dom)
+								// add();
+							}, 'undefined', function(err){
+								console.log(err)
+							})
+					})(i)
+				}
+				for(var i = 0; i < 35;i++){
+					(function(i){
+						var cube;
+						var math = Math.floor(Math.random()*20);
+						var backload = new THREE.TextureLoader();
+							backload.load('images/'+imgarr[math]+'.jpg', function(texture){
+								var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+								var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+								material.transparent = true;
+								cube = new THREE.Mesh( geometry, material );
+								var l = 35;
 								var avd = 360/l;
 								var ahd = avd*Math.PI/180; 
 								var phi = Math.acos( -1 + ( 2 * i ) / l );
@@ -220,6 +328,60 @@
 								dom.position.x = Math.sin((ahd*i))*500;
 								dom.position.y = 900;
 								dom.position.z = Math.cos((ahd*i))*500;
+								dom.lookAt( group5.position )
+								group5.add(dom)
+								// add();
+							}, 'undefined', function(err){
+								console.log(err)
+							})
+					})(i)
+				}
+				for(var i = 0; i < 25;i++){
+					(function(i){
+						var cube;
+						var math = Math.floor(Math.random()*20);
+						var backload = new THREE.TextureLoader();
+							backload.load('images/'+imgarr[math]+'.jpg', function(texture){
+								var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+								var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+								material.transparent = true;
+								cube = new THREE.Mesh( geometry, material );
+								var l = 25;
+								var avd = 360/l;
+								var ahd = avd*Math.PI/180; 
+								var phi = Math.acos( -1 + ( 2 * i ) / l );
+								var theta = Math.sqrt( l * Math.PI ) * phi;
+								var dom = cube.clone();
+								dom.position.x = Math.sin((ahd*i))*650;
+								dom.position.y = -750;
+								dom.position.z = Math.cos((ahd*i))*650;
+								dom.lookAt( group6.position )
+								group6.add(dom)
+								// add();
+							}, 'undefined', function(err){
+								console.log(err)
+							})
+					})(i)
+				}
+				for(var i = 0; i < 25;i++){
+					(function(i){
+						var cube; 
+						var math = Math.floor(Math.random()*20);
+						var backload = new THREE.TextureLoader();
+							backload.load('images/'+imgarr[math]+'.jpg', function(texture){
+								var geometry = new THREE.PlaneBufferGeometry( 100, 100, 1 );
+								var material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.BackSide} );
+								material.transparent = true;
+								cube = new THREE.Mesh( geometry, material );
+								var l = 25;
+								var avd = 360/l;
+								var ahd = avd*Math.PI/180; 
+								var phi = Math.acos( -1 + ( 2 * i ) / l );
+								var theta = Math.sqrt( l * Math.PI ) * phi;
+								var dom = cube.clone();
+								dom.position.x = Math.sin((ahd*i))*650;
+								dom.position.y = 750;
+								dom.position.z = Math.cos((ahd*i))*650;
 								dom.lookAt( group5.position )
 								group5.add(dom)
 								// add();
@@ -291,7 +453,6 @@
 				group5.rotation.y -= su;
 				group6.rotation.y += su*4;
 			}
-			
 			renderer.render( scene, camera );
 			requestAnimationFrame( animate );
 		}
